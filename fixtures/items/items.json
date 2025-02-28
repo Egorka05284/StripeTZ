@@ -1,0 +1,1 @@
+[{"model": "items.items", "pk": 1, "fields": {"name": "Стул", "description": "Мягкий и элегантный", "price": "100.90"}}, {"model": "items.items", "pk": 2, "fields": {"name": "Диван", "description": "Большой и мягкий", "price": "1000.99"}}, {"model": "items.items", "pk": 3, "fields": {"name": "Стол", "description": "Широкий и мраморный", "price": "800.00"}}]

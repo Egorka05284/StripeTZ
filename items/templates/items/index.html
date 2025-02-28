@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Товары</title>
-</head>
-<body>
+{% extends "items/layout.html" %}
+
+
+    {% block head %}
+        <title>Все товары</title>
+    {% endblock head %}
+    {% block content %}
     {% for item in items %}
-        <ul>
-            <li><a href='{% url "items:item" item.id %}'>{{item.name}}</a></li>
-        </ul>
+        <div class='col-lg-4 col-md-6 mt-4'>
+            <div class='card'>
+                <ul>
+                    <li><a href='{% url "items:item" item.id %}'>{{item.name}}</a><p>{{item.price}}$</p></li>
+                </ul>
+            </div>
+        </div>
     {% endfor %}
-</body>
-</html>
+    
+    {% endblock content %}
