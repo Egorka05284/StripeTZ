@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-x1fb9k2^t*aj&)%xt)bj0fj6o+l95m36pb%_$n7gc)29kn^pqm'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -125,5 +128,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-STRIPE_SECRET_KEY = 'sk_test_51Qwe6NFyvjeMP750OZlMBAX12Po1O6f999MgT34DzdNc9DOhBuN71Ai5HBvoON03qubw9lbIr7QaK1CO3H18OUhF00uFiOrsCw'
-STRIPE_PUBLISHABLE_KEY = 'pk_test_51Qwe6NFyvjeMP750kevRAGEEAcOZjiHwpbC7wgEOI6UQimY2Hr5XulaBeBVR1yM28q8Kl7YZNvxEG4ZuRSSawh4o00neRR0FR3'
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
+STRIPE_PUBLISHABLE_KEY = os.getenv('STRIPE_PUBLISHABLE_KEY')
